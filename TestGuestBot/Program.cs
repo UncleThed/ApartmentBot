@@ -5,6 +5,7 @@
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace TestGuestBot
 {
@@ -19,6 +20,11 @@ namespace TestGuestBot
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureLogging((logging) =>
+                    {
+                        logging.AddDebug();
+                        logging.AddConsole();
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
