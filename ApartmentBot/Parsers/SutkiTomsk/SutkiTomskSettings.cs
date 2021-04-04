@@ -1,4 +1,4 @@
-﻿namespace TestGuestBot.Parsers.SutkiTomsk
+﻿namespace ApartmentBot.Parsers.SutkiTomsk
 {
     public class SutkiTomskSettings : IParserSettings
     {

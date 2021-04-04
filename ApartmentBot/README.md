@@ -1,4 +1,4 @@
-﻿# TestGuestBot
+﻿# ApartmentBot
 
 Bot Framework v4 empty bot sample.
 
@@ -15,11 +15,11 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
 ## To try this sample
 
-- In a terminal, navigate to `TestGuestBot`
+- In a terminal, navigate to `ApartmentBot`
 
     ```bash
     # change into project folder
-    cd TestGuestBot
+    cd ApartmentBot
     ```
 
 - Run the bot from a terminal or from Visual Studio, choose option A or B.
@@ -35,8 +35,8 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `TestGuestBot` folder
-  - Select `TestGuestBot.csproj` file
+  - Navigate to `ApartmentBot` folder
+  - Select `ApartmentBot.csproj` file
   - Press `F5` to run the project
 
 ## Testing the bot using Bot Framework Emulator

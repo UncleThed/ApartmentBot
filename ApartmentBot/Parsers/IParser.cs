@@ -1,6 +1,7 @@
-﻿using AngleSharp.Html.Dom;
+﻿using System;
+using AngleSharp.Html.Dom;
 
-namespace TestGuestBot.Parsers
+namespace ApartmentBot.Parsers
 {
     public interface IParser<T> where T : class
     {

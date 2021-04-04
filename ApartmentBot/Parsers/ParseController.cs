@@ -1,7 +1,7 @@
 ﻿using AngleSharp.Html.Parser;
 using System.Threading.Tasks;
 
-namespace TestGuestBot.Parsers
+namespace ApartmentBot.Parsers
 {
     public class ParseController<T> where T : class
     {

@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace TestGuestBot.Parsers
+namespace ApartmentBot.Parsers
 {
     public class HtmlLoader
     {

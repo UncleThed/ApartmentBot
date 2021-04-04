@@ -1,22 +1,14 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
-//
-// Generated with Bot Builder V4 SDK Template for Visual Studio CoreBot v4.9.1
-
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
+using ApartmentBot.Models;
+using System.Collections.Generic;
 
-namespace TestGuestBot.Bots
+namespace ApartmentBot.Bots
 {
-    // This IBot implementation can run any type of Dialog. The use of type parameterization is to allows multiple different bots
-    // to be run at different endpoints within the same project. This can be achieved by defining distinct Controller types
-    // each with dependency on distinct IBot types, this way ASP Dependency Injection can glue everything together without ambiguity.
-    // The ConversationState is used by the Dialog system. The UserState isn't, however, it might have been used in a Dialog implementation,
-    // and the requirement is that all BotState objects are saved at the end of a turn.
     public class DialogBot<T> : ActivityHandler
         where T : Dialog
     {
@@ -45,6 +37,15 @@ namespace TestGuestBot.Bots
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             Logger.LogInformation("Running dialog with Message Activity.");
+
+            var clientAccessor = UserState.CreateProperty<Client>(nameof(Client));
+            turnContext.TurnState.Add("0", clientAccessor);
+
+            var apartmentsAccessor = UserState.CreateProperty<List<Apartment>>(nameof(List<Apartment>));
+            turnContext.TurnState.Add("1", apartmentsAccessor);
+
+            var currentApartmentAccessor = UserState.CreateProperty<Apartment>(nameof(Apartment));
+            turnContext.TurnState.Add("2", currentApartmentAccessor);
 
             // Run the Dialog with the new message Activity.
             await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);

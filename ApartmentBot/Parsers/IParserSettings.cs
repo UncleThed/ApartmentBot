@@ -1,4 +1,4 @@
-﻿namespace TestGuestBot.Parsers
+﻿namespace ApartmentBot.Parsers
 {
     public interface IParserSettings
     {
